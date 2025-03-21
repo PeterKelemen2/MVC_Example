@@ -30,9 +30,8 @@ public class UserController {
         userRepository.addUser(user);
     }
 
-    public void updateUser(int id) {
-        Optional<User> user = userRepository.getUserById(id);
-        if (user.isEmpty()) return;
+    public void updateUser(int id, String name, String email, String address) {
+        userRepository.updateUser(id, name, email, address);
     }
 
     private int getNextId() {

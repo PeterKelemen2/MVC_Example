@@ -26,9 +26,9 @@ public class UserRepository {
 
         if (user.isEmpty()) return;
 
-        if (name != null) user.get().setName(name);
-        if (email != null) user.get().setEmail(email);
-        if (address != null) user.get().setAddress(address);
+        if (name != null && !name.equals(user.get().getName())) user.get().setName(name);
+        if (email != null && !email.equals(user.get().getEmail())) user.get().setEmail(email);
+        if (address != null && !email.equals(user.get().getAddress())) user.get().setAddress(address);
     }
 
     public void deleteUser(int id) {
