@@ -25,9 +25,13 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while(true){
-            System.out.println("1 - Add user");
+            System.out.println("\n### Options ###");
+            System.out.println("1 - Print users");
+            System.out.println("2 - Add user");
+            System.out.println("3 - Delete user");
+            System.out.println("4 - Update user");
             System.out.println("Choose an option:");
-            String keyboardInput = scanner.next();
+            String keyboardInput = scanner.nextLine();
 
             commands.interpretCommand(keyboardInput);
         }

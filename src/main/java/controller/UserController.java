@@ -53,8 +53,20 @@ public class UserController {
         return false;
     }
 
-    public void delete(int id) {
+    public boolean deleteUser(int id) {
         Optional<User> user = userRepository.getUserById(id);
-        user.ifPresent(value -> userRepository.users.remove(value));
+//        user.ifPresent(value -> userRepository.users.remove(value));
+
+        if (user.isPresent()){
+            userRepository.users.remove(user);
+            return true;
+        }
+
+        return false;
+    }
+
+    public void printUser(int id){
+        Optional<User> user = userRepository.getUserById(id);
+        if (user.isPresent()) System.out.println(user);
     }
 }
